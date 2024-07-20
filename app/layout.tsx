@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ConvexClerkProvider } from "@/components/providers/convex-provider";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ConvexClerkProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange storageKey="mindforge-theme">
+            <Toaster position="bottom-center" />
             {children}
           </ThemeProvider>
         </ConvexClerkProvider>
