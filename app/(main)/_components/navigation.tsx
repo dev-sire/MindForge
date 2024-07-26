@@ -1,14 +1,15 @@
-import { cn } from '@/lib/utils'
-import { ChevronLeft, MenuIcon, PlusCircle, Search, Settings } from 'lucide-react'
-import { usePathname } from 'next/navigation'
 import React, { ElementRef, useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
+import { usePathname } from 'next/navigation'
+import { cn } from '@/lib/utils'
 import UserItem from './user-item'
 import Item from './item'
+import DocumentList from './document-list'
 import { useMutation } from 'convex/react'
 import { api } from '@/convex/_generated/api'
 import { toast } from 'sonner'
-import DocumentList from './document-list'
+import { ChevronLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from 'lucide-react'
+import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
 
 const Navigation = () => {
     const isMobile = useMediaQuery("(max-width: 768px)")
@@ -132,6 +133,19 @@ const Navigation = () => {
             </div>
             <div className="mt-4">
                 <DocumentList />
+                <Item 
+                    onClick={handleCreate}
+                    label="Add a page"
+                    icon={Plus}
+                />
+                <Popover>
+                    <PopoverTrigger className="w-full mt-4">
+                        <Item label="Trash" icon={Trash} />
+                    </PopoverTrigger>
+                    <PopoverContent className="p-0 w-72" side={isMobile ? "bottom" : "right"}>
+                        <p>Trash Box</p>
+                    </PopoverContent>
+                </Popover>
             </div>
             <div 
                 onMouseDown={handleMouseDown}
