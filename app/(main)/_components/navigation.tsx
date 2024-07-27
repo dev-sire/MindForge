@@ -10,11 +10,14 @@ import { api } from '@/convex/_generated/api'
 import { toast } from 'sonner'
 import { ChevronLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from 'lucide-react'
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
+import TrashBox from './trash-box'
+import { useSearch } from '@/hooks/use-search'
 
 const Navigation = () => {
     const isMobile = useMediaQuery("(max-width: 768px)")
     const pathname = usePathname()
     const create = useMutation(api.documents.create)
+    const search = useSearch()
 
     const isResizingRef = useRef(false)
     const sidebarRef = useRef<ElementRef<"aside">>(null)
@@ -112,13 +115,13 @@ const Navigation = () => {
             )}>
                 <ChevronLeft className="h-6 w-6" />
             </div>
-            <div className="">
+            <div>
                 <UserItem />
                 <Item 
                     label="Search"
                     icon={Search}
                     isSearch
-                    onClick={() => {}}
+                    onClick={search.onOpen}
                 />
                 <Item 
                     label="Settings"
@@ -143,7 +146,7 @@ const Navigation = () => {
                         <Item label="Trash" icon={Trash} />
                     </PopoverTrigger>
                     <PopoverContent className="p-0 w-72" side={isMobile ? "bottom" : "right"}>
-                        <p>Trash Box</p>
+                        <TrashBox />
                     </PopoverContent>
                 </Popover>
             </div>
