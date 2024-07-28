@@ -12,12 +12,14 @@ import { ChevronLeft, MenuIcon, Plus, PlusCircle, Search, Settings, Trash } from
 import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
 import TrashBox from './trash-box'
 import { useSearch } from '@/hooks/use-search'
+import { UseSettings } from '@/hooks/use-settings'
 
 const Navigation = () => {
     const isMobile = useMediaQuery("(max-width: 768px)")
     const pathname = usePathname()
     const create = useMutation(api.documents.create)
     const search = useSearch()
+    const settings = UseSettings()
 
     const isResizingRef = useRef(false)
     const sidebarRef = useRef<ElementRef<"aside">>(null)
@@ -126,7 +128,7 @@ const Navigation = () => {
                 <Item 
                     label="Settings"
                     icon={Settings}
-                    onClick={() => {}}
+                    onClick={settings.onOpen}
                 />
                 <Item 
                     onClick={handleCreate}
