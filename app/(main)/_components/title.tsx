@@ -33,15 +33,19 @@ const Title = ({initialData}: TitleProps) => {
 
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTitle(event.target.value)
+    }
+    
+    const updateTitle = () => {
+        disableInput()
         update({
             id: initialData._id,
-            title: event.target.value || "Untitled"
+            title: title || "Untitled"
         })
     }
 
     const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         if(event.key === "Enter"){
-            disableInput()
+            updateTitle()
         }
     }
 
@@ -52,7 +56,7 @@ const Title = ({initialData}: TitleProps) => {
             <Input
                 ref={inputRef}
                 onClick={enableInput}
-                onBlur={disableInput}
+                onBlur={updateTitle}
                 onChange={onChange}
                 onKeyDown={onKeyDown}
                 value={title}
