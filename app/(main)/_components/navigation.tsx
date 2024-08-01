@@ -1,6 +1,6 @@
 import React, { ElementRef, useEffect, useRef, useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
-import { useParams, usePathname } from 'next/navigation'
+import { useParams, usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import UserItem from './user-item'
 import Item from './item'
@@ -19,6 +19,7 @@ const Navigation = () => {
     const isMobile = useMediaQuery("(max-width: 768px)")
     const pathname = usePathname()
     const params = useParams()
+    const router = useRouter()
     const create = useMutation(api.documents.create)
     const search = useSearch()
     const settings = UseSettings()
@@ -98,7 +99,7 @@ const Navigation = () => {
     }
 
     const handleCreate = () => {
-        const promise = create({ title: "Untitled" })
+        const promise = create({ title: "Untitled" }).then((documentId) => router.push(`/documents/${documentId}`))
 
         toast.promise(promise, {
             loading: "Creating a new note...",
