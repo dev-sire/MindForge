@@ -10,7 +10,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mindforge.vercel.app'),
+  metadataBase: new URL('https://mindforge-seven.vercel.app'),
   title: "MindForge: The All-in-One Workspace",
   description: "MindForge is the ultimate knowledge management and productivity tool. Take your ideas from rough concepts to polished masterpieces with our intuitive interface and powerful features.",
   icons: {
