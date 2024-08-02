@@ -7,6 +7,9 @@ html,
 :root{
   height: 100%;
 }
+html.dark{
+  background: #1f1f1f;
+}
 @layer base {
   :root {
     --background: 0 0% 100%;

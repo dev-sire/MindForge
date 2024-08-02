@@ -6,6 +6,7 @@ import { redirect } from 'next/navigation'
 import { ReactNode } from 'react'
 import Navigation from './_components/navigation'
 import { SearchCommand } from '@/components/search-command'
+import { Metadata } from 'next'
 
 const MainLayout = ({children}: {children: ReactNode}) => {
     const { isAuthenticated, isLoading } = useConvexAuth()

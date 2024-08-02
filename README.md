@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mindforge: The All-in-One Workspace
 
-## Getting Started
+MindForge is a powerful, customizable workspace that helps you organize your thoughts, ideas, and tasks. It's designed to be intuitive and efficient, allowing you to focus on what matters most.
 
-First, run the development server:
+### Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Frontend:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next.js 
+- TypeScript 
+- Tailwind CSS 
+- Shadcn
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Backend:**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Convex
+- Clerk
+- Edge Store
 
-## Learn More
+### Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+**Prerequisites:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js and npm (or yarn) installed
+- Basic understanding of Next.js, TypeScript, and React
+- Accounts for Convex, Clerk, and Edge Store
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Installation:**
 
-## Deploy on Vercel
+1. Clone the repository: 
+```git clone https://github.com/dev-sire/Mindforge.git```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Navigate to the project directory: 
+```cd mindforge```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. Install dependencies:
+```npm install```
+
+4. Set up environment variables: 
+
+- Create a ```.env.local``` file at the root of the project.
+- Add your Convex, Clerk, and Edge Store API keys.
+- Refer to the respective documentation for detailed instructions.
+
+### Contributing
+
+We welcome contributions to MindForge! Please feel free to open issues or pull requests.
+
+### License
+
+Visage Connect is licensed under the MIT License. See the ```LICENSE``` file for details.
