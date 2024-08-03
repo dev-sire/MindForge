@@ -1,4 +1,3 @@
-// https://dashing-lionfish-45.clerk.accounts.dev
 export default {
     providers: [
       {

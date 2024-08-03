@@ -7,8 +7,7 @@ import {
     DropdownMenuContent, 
     DropdownMenuItem, 
     DropdownMenuTrigger, 
-    DropdownMenuSeparator, 
-    DropdownMenuLabel 
+    DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
 import { SignOutButton, useUser } from "@clerk/clerk-react"
 
